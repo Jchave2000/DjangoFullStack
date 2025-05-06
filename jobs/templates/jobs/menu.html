@@ -1,0 +1,66 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Joseph's Coffee Bar</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'jobs/javajam.css' %}" rel="stylesheet">
+</head>
+<body>
+	<div id="wrapper">
+		<header><h1><a href="{% url 'home' %}">JavaJam Coffee Joint</a></h1></header>
+		
+		<nav>
+			<ul>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'menu' %}">Menu</a></li>
+				<li><a href="{% url 'music' %}">Music</a></li>
+				<li><a href="{% url 'job_application' %}">Jobs</a></li>
+				<li><a href="{% url 'job_success' %}">Application Success</a></li>				
+			</ul>
+		</nav>
+		
+		<main>
+			<div id="heromugs"></div>
+			
+			<h2>Coffee at JavaJam</h2>
+			
+			<p>Indulge in our locally roasted free-trade coffee and ejoy the aroma, the smoot taste, the caffeine! Join our mug club and get a 10% discount on each cup of coffee you purchase - ask the barista for details
+			</p>
+			
+			<div id="flow">
+			<table>
+				<tr>
+					<th>Just Java</th>
+					<td>Regular house blend, decaffeinated coffee, or flavor of the day.<br>
+					Endless cup $3.50</td>
+				</tr>
+				
+				<tr>
+					<th>Cafe au Lait</th>
+					<td>House belnded coffee infused into a smooth, steamed milk.<br>
+					Single $4.00 
+					<br>
+					Double $5.00</td>
+				</tr>
+				
+				<tr>
+					<th>Iced Cappuccino</th>
+					<td id="special">Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
+					Single $5.00 Double $6.50</td>
+				</tr>
+			</table>
+			</div>
+		</main>
+		
+		<footer>
+				Copyright&copy; JavaJam Coffee Bar<br>
+				<a href="mailto:jchave95@stu.jjc.edu">jchave95@stu.jjc.edu</a>
+		</footer>
+	</div>
+</body>
+</html>

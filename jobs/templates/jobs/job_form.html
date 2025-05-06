@@ -1,0 +1,57 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Joseph's Coffee Bar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'jobs/javajam.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <header><h1><a href="{% url 'home' %}">JavaJam Coffee Joint</a></h1></header>
+
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'menu' %}">Menu</a></li>
+                <li><a href="{% url 'music' %}">Music</a></li>
+                <li><a href="{% url 'job_application' %}">Jobs</a></li>
+                <li><a href="{% url 'job_success' %}">Application Success</a></li>                
+            </ul>
+        </nav>
+
+        <main>
+            <div id="herojobs"></div>
+
+            <h2>Jobs at JavaJam</h2>
+            <p>Want to work at JavaJam? Fill out the form below to start your application. All information is required.</p>
+
+            <!-- Django Form Rendering -->
+            <form method="post" action="{% url 'job_application' %}">
+                {% csrf_token %}
+                <label for="id_Name">Name:</label>
+                {{ form.name }}
+
+                <label for="id_email">E-mail:</label>
+                {{ form.email }}
+
+                <label for="id_start_date">Start Date:</label>
+                {{ form.start_date }}
+
+                <label for="id_experience">Experience:</label>
+                {{ form.experience }}
+                
+                <input type="submit" value="Apply Now" id="mySubmit">
+            </form>
+        </main>
+
+        <footer>
+            Copyright&copy; JavaJam Coffee Bar<br>
+            <a href="mailto:jchave95@stu.jjc.edu">jchave95@stu.jjc.edu</a>
+        </footer>
+    </div>
+</body>
+</html>
